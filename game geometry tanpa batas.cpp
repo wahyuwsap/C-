@@ -130,7 +130,7 @@ void play(){
 	//sumbu y = 7 dan 9
 	//sumbu x = 60 sampai dengan 116
 	
-	//kordinat rintangan y,x (kotak merah)
+	//kordinat rintangan y,x (spike)
 	
 	int a=5;
 	int a1=6;
@@ -229,7 +229,7 @@ void play(){
 		attroff(COLOR_PAIR(2));
 		attron(COLOR_PAIR(1));
 		
-		//menampilkan dan membuat kotak merah agar dapat bergerak
+		// menyimpan kordinat spike
 		mvprintw(a,b2-i,spike);
 		mvprintw(a1,b1-i,spike2);
 		mvprintw(a2,b-i,spike3);
@@ -263,12 +263,12 @@ void play(){
 		
 		attroff(COLOR_PAIR(1));
 		attron(COLOR_PAIR(4));
-		
-		mvprintw(l+1, o-((i-7)*2),laser);//tipuan anjay
+
+		// membuat laser(panah)
+		mvprintw(l+1, o-((i-7)*2),laser); // laser tipuan
 		attroff(COLOR_PAIR(4));
-		mvprintw(l1, o-((i+20)*3),laser);
-		
-		mvprintw(n1, o-(i*3),laser);
+		mvprintw(l1, o-((i+20)*3),laser); // laser atas
+		mvprintw(n1, o-(i*3),laser); // laser bawah
 		
 		
 		
@@ -291,7 +291,7 @@ void play(){
 		mvprintw(y-1,x, kotak1);
 		attroff(COLOR_PAIR(3));
 		
-		//kondisi manual jika kotak kuning menabrak kotak merah
+		//kondisi manual jika kotak kuning menabrak spike
 		if(y==a2 && x==b-i-1 ){
 			clear();
 			printw("kamu kalah\ndengan skor: %d",skors);
