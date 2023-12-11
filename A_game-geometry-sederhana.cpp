@@ -368,10 +368,10 @@ void play(){
 //			mvprintw(n1,o1-j,laser)
 //		}
 		//kondisi ketika kotak kuning naik turun
-		if(tombol==72){
+		if(tombol==72||tombol==119){
 			y=7;
 		}
-		else if(tombol==80){
+		else if(tombol==80||tombol==115){
 			y=10;
 		}
 		attroff(COLOR_PAIR(1));refresh();
