@@ -99,7 +99,7 @@ void mode(){
 	
 	echo();
 	
-	md = getch();//input tingkat kesulitan
+	md = getch();//input tingkat kesulitan game
 	
 	if(md == '1'){
 		time=80;play();
@@ -213,7 +213,7 @@ void play(){
 	//looping utama
 	while(true){
 	for(int i = 0;i<200;i++){
-		skors++;//syarat score agar nilainya bertambah
+		skors++;//syarat score agar nilainya bertambah terus
 		mvprintw(20,11, "Score = ");
 		mvprintw(20,20,"%d", skors);
 		
@@ -223,7 +223,7 @@ void play(){
 		
 	
     
-		//membuat garis lurus
+		//membuat garis lurus (jalan)
 		attron(COLOR_PAIR(2));
 		mvprintw(8,0,"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
 		attroff(COLOR_PAIR(2));
@@ -265,10 +265,10 @@ void play(){
 		attron(COLOR_PAIR(4));
 
 		// membuat laser(panah)
-		mvprintw(l+1, o-((i-7)*2),laser); // laser tipuan
+		mvprintw(l+1, o-((i-7)*2),laser); // laser yang tipuan
 		attroff(COLOR_PAIR(4));
-		mvprintw(l1, o-((i+20)*3),laser); // laser atas
-		mvprintw(n1, o-(i*3),laser); // laser bawah
+		mvprintw(l1, o-((i+20)*3),laser); // laser bagian atas
+		mvprintw(n1, o-(i*3),laser); // laser bagian bawah
 		
 		
 		
@@ -276,7 +276,7 @@ void play(){
 //		for (int j=0;j<o2;j++){
 //			mvprintw(n1,o1-j,laser)
 //		}
-		//kondisi naik turun kotak kuning
+		//kondisi ketika si kotak  kuning naik turun
 		if(tombol==72){
 			y=7;
 		}
@@ -285,13 +285,13 @@ void play(){
 		}
 		attroff(COLOR_PAIR(1));refresh();
 		
-		//membuat kotak kuning naik dan turun
+		//membuat kotak kuning menjadi naik dan turun
 		attron(COLOR_PAIR(3));
 		mvprintw(y,x, kotak);
 		mvprintw(y-1,x, kotak1);
 		attroff(COLOR_PAIR(3));
 		
-		//kondisi manual jika kotak kuning menabrak spike
+		//kondisi manual jika kotak kuning menabrak spikenya
 		if(y==a2 && x==b-i-1 ){
 			clear();
 			printw("kamu kalah\ndengan skor: %d",skors);
