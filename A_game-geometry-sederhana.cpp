@@ -6,7 +6,7 @@
 
 using namespace std;
 
-//kecepatan kotak, semakin kecil nilainya semakin cepat
+//kecepatan kotak, jika semakin kecil nilainya maka semakin cepat
 int time;
 
 void warna();
@@ -215,7 +215,7 @@ void play(){
 	//sumbu y = 7 dan 9
 	//sumbu x = 60 sampai dengan 116
 	
-	//kordinat rintangan y,x (spike)
+	// titik kordinat rintangan y,x (spike)
 	
 	int a=5;
 	int a1=6;
@@ -301,7 +301,7 @@ void play(){
 	//looping utama
 	while(true){
 	for(int i = 0;i<200;i++){
-		skors++;//syarat score agar nilainya bertambah
+		skors++;//syarat score agar nilainya bertambah terus
 		mvprintw(20,11, "Score = ");
 		mvprintw(20,20,"%d", skors);
 		
@@ -348,7 +348,7 @@ void play(){
 		mvprintw(n2,o-i,spike3);
 		attroff(COLOR_PAIR(1));
 		
-		mvprintw(l,o2+300-(i*3), beda3);  //kek ngebut aja gtu
+		mvprintw(l,o2+300-(i*3), beda3);  //jadi kek ngebut aja gtu seh
 		mvprintw(l1,o1+300-(i*3),beda2);
 		mvprintw(l2,o+300-(i*3),beda);
 		
@@ -358,8 +358,8 @@ void play(){
 		// membuat laser(panah)
 		mvprintw(l+1, o-((i-7)*2),laser); // laser tipuan
 		attroff(COLOR_PAIR(4));
-		mvprintw(l1, o-((i+20)*3),laser); // laser atas
-		mvprintw(n1, o-(i*3),laser); // laser bawah
+		mvprintw(l1, o-((i+20)*3),laser); // laser bagian atas
+		mvprintw(n1, o-(i*3),laser); // laser bagian bawah
 		
 		
 		
@@ -367,7 +367,7 @@ void play(){
 //		for (int j=0;j<o2;j++){
 //			mvprintw(n1,o1-j,laser)
 //		}
-		//kondisi naik turun kotak kuning
+		//kondisi ketika kotak kuning naik turun
 		if(tombol==72){
 			y=7;
 		}
